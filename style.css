@@ -1,0 +1,133 @@
+body {
+  font-family: monospace;
+  width: 60vw;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.container {
+  margin-top: 2%;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px;
+  color: azure;
+}
+
+dd {
+  font-size: small;
+  margin-bottom: 10px;
+  color: rgb(39, 98, 98);
+  background-color: rgb(231, 240, 255);
+  width: fit-content;
+}
+
+a {
+  color: rgb(214, 99, 249);
+  text-decoration: none;
+  margin-left: 1em;
+  /* text-shadow: 1px 1px 1px olive; */
+}
+
+.exercise {
+  color: rgb(98, 116, 100);
+  /* text-shadow: 1px 1px 1px rgb(124, 124, 124); */
+}
+
+.example {
+  color: rgb(255, 178, 159);
+  text-shadow: 1px 1px 2px rgb(43, 43, 43);
+}
+
+sub {
+  color: rgb(72, 70, 71);
+  text-shadow: 1px 1px rgb(191, 176, 184);
+}
+
+video {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.new {
+  color: rgba(138, 255, 42, 0.79);
+  /* font-size: small; */
+  font-style: italic;
+}
+
+section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2em;
+  /* background-color: rgb(207, 225, 249); */
+}
+
+#left {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: min-content;
+  padding-left: 1em;
+}
+
+#right {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: min-content;
+}
+
+.js {
+  color: cyan;
+  font-weight: bold;
+}
+
+p {
+  font-weight: lighter;
+}
+
+@media (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+  #right {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+
+b {
+  color: rgb(233, 64, 92);
+  /* font-size: smaller; */
+  font-weight: 400;
+  /* text-shadow: 1px 1px 2px rgb(43, 43, 43); */
+}
+
+i {
+  color: rgb(141, 213, 244);
+  font-size: small;
+  font-weight: 400;
+  /* text-shadow: 1px 1px 2px rgb(43, 43, 43); */
+}
+
+emp {
+  color: blanchedalmond;
+  font-style: italic;
+  font-size: small;
+}
+
+.classExercise{
+color: rgb(244, 141, 153);
+  font-size: small;
+  font-weight: 400;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Shakespeare quotes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Shakespeare quotes</h1>
+
+    <p>
+      Choose a couple of quotes from the web (for example
+      <a href="https://absoluteshakespeare.com/trivia/quotes/quotes.htm">here</a
+      >) and follow one of the examples below and create your own mix of
+      Shakespeare's quotes. If you are adventurous, try to mix more than 2
+      quotes.
+    </p>
+
+    <div class="codePanel">
+      <div class="panel">
+        <div id="sketch-container"></div>
+        <p><a href="https://editor.p5js.org/Creative_Coding_UIUC/sketches/t9OQo_256">See the code here</a></p>
+      </div>
+      <div class="panel">
+        <pre><code> // quotes from https://absoluteshakespeare.com/trivia/quotes/quotes.htm
+
+  let quote1;
+  let quote2;
+  let result;
+  let myFont1;
+
+  function preload(){
+    myFont1 = loadFont('SyrCOMAntioch.otf');
+  }
+
+  function setup() {
+    createCanvas(400, 400);
+
+    // Shakespeare, The Merchant of Venice 
+    quote1 = "But love is blind, and lovers cannot see";
+    quote2 = "I like not fair terms and a villain's mind";
+  }
+
+  function draw() {
+    background(220);
+
+    // find where is the word 'lovers' in the first quote
+    let indexQ1 = quote1.indexOf("lovers");
+
+    // let's get the index from the mouse postion
+    let lengthQ2 = quote2.length;
+    let indexQ2 = map(mouseX, 0, width, 0, lengthQ2);
+
+    // get substrings of both quotes
+    let subQ1 = quote1.substring(0, indexQ1);
+    let subQ2 = quote2.substring(0, indexQ2)
+
+    // concatenate strings
+    result = subQ1 + subQ2
+
+    textFont(myFont1);
+    textSize(24)
+    text(result, 40, 50, 300);
+  }
+        </code></pre>
+      </div>
+      <div class="panel">
+        <pre><code>
+</code></pre>
+      </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

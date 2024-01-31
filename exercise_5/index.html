@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <style>
+      body {
+        width: 45vw;
+        font-size: 2em;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #f4f4f4;
+      }
+      #sketchDiv {
+        font-family: "Times New Roman", Times, serif;
+      }
+      #paragraphDiv {
+        font-family: "Times New Roman", Times, serif;
+        height: 40vh;
+        width: 30vw;
+      }
+      h1 {
+        position: sticky;
+        top: 0px;
+        background-color: #f4f4f4;
+      }
+      #description {
+        position: absolute;
+        left: 10px;
+        top: 60vh;
+        font-family: Helvetica, sans-serif;
+        font-size: 0.4em;
+        width: 20vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Auto-scrolling</h1>
+    <div id="description">
+      <h3>Exercise description</h3>
+      <p>
+        This exercise is about creating a paragraph that scrolls automatically.
+      </p>
+      <p>
+        There are two sections where the text is displayed. The one on the top
+        is a canvas created in p5*js. The one on the bottom is a paragraph that
+        scrolls automatically as its content is filled with more text.
+      </p>
+      <p>
+        Your task is to first create the canvas in p5*js. Once it is working
+        there you can explore the
+        <a href="https://p5js.org/reference/#/p5/select">p5*js DOM reference</a>
+        to explore how to select elements from the HTML page and change its
+        attributes.
+      </p>
+      <p>
+        The text is loaded from a .txt file with the text of your choice. You
+        should put in your project folder. The text should be long enough to
+        make the paragraph scroll.
+      </p>
+    </div>
+
+    <!-- canvas placeholder -->
+    <div id="sketchDiv"></div>
+    <div id="paragraphDiv"></div>
+
+    <!-- The p5.js code -->
+    <script src="src.js"></script>
+  </body>
+</html>

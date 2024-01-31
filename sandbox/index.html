@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .square {
+        border: 1px solid purple;
+        margin: auto;
+        background-color: rgba(128, 0, 128, 0.199);
+      }
+
+      #one {
+        width: calc(40%);
+        height: 10em;
+        position: absolute;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-top: 10%;
+      }
+
+      #two {
+        width: 120%;
+        height: 140%;
+        position: relative;
+        margin-top: -10%;
+        margin-left: -10%;
+      }
+      #three {
+        width: 120%;
+        height: 140%;
+        position: relative;
+        margin-top: -10%;
+        margin-left: -10%;
+      }
+      #four {
+        width: 120%;
+        height: 140%;
+        position: relative;
+        margin-top: -10%;
+        margin-left: -10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="square" id="one">
+      One
+      <div class="square" id="two">
+        Two
+        <div class="square" id="three">
+          Three
+          <div class="square" id="four">Four</div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      let one = document.getElementById("two");
+      let scale = 1;
+
+      one.onwheel = zoom;
+
+      function zoom(evt) {
+        evt.preventDefault();
+        scale += evt.deltaY * -0.01;
+        scale = Math.min(Math.max(0.125, scale + evt.deltaY * -0.001), 4);
+        one.style.transform = `scale(${scale})`;
+      }
+    </script>
+  </body>
+</html>

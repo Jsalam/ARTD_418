@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mondrian Sketch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Interactive Mondrian</h1>
+    <p>Recreate one geometric painting of Piet Mondrian using relative coordinates. You should submit a link to your sketch on your P5 editor. The canvas size should be proportional to the chosen painting and its shortest side must be 600 pixels. The composition scale should respond to the mouse position: the closer to the canvas origin the smaller the composition scale.</p>
+    <div id="sketch-container"></div>
+
+    <p>Code snippet:</p>
+    <pre><code>
+      let rectScale = 1;
+      let mondrianImage;
+
+      let orgX = 0;
+      let orgY = 0;
+      let gap = 16;
+
+      function preload() {
+        // Preload any images here
+        mondrianImage = loadImage("images/mondrian.jpeg");
+      }
+
+      function setup() {
+        // Setup p5.js sketch here
+        createCanvas(700, 400).parent("sketch-container");
+      }
+
+      function draw() {
+        // Background
+        background(0);
+        noStroke();
+
+        // Mouse scale factor
+        let scale = map(mouseX, 0, width, 0.5, 1);
+
+        // Scale gap
+        gap = 16 * scale;
+
+        // Blue rectangle
+        fill(0, 0, 255);
+        let blue1XStart = orgX;
+        let blue1YStart = orgY;
+        let blue1Xend = 252 * scale;
+        let blue1Yend = 74 * scale;
+        rect(blue1XStart, blue1YStart, blue1Xend, blue1Yend);
+
+        // Red rectangle
+        fill(255, 0, 0);
+        let red1XStart = blue1Xend + gap;
+        let red1YStart = orgY;
+        let red1Xend = 314* scale;
+        let red1Yend = 30 * scale;
+        rect(red1XStart,red1YStart , red1Xend, red1Yend);
+
+        // Yellow rectangle
+        fill(255, 255, 0);
+        let yellow1XStart = red1XStart;
+        let yellow1YStart = red1Yend + gap;
+        let yellow1Xend = 204 * scale;
+        let yellow1Yend = 184 * scale;
+        rect(yellow1XStart, yellow1YStart, yellow1Xend, yellow1Yend);
+
+        // White rectangle
+        fill(255, 255, 255);
+        let white1XStart = blue1Xend + gap + red1Xend + gap;
+        let white1YStart = blue1YStart;
+        let white1Xend = 102 * scale;
+        let white1Yend = 320 * scale;
+        rect(white1XStart, white1YStart, white1Xend, white1Yend);
+
+        // white2 rectangle
+        fill(255, 255, 255);
+        let white2XStart = blue1Xend + gap + yellow1Xend + gap;
+        let white2YStart = yellow1YStart;
+        let white2Xend = 94 * scale;
+        let white2Yend = 184 * scale;
+        rect(white2XStart, white2YStart, white2Xend, white2Yend);
+        
+        // More code here ...
+      }
+    </code></pre>
+
+    <!-- JavaScript code -->
+    <script>
+      let rectScale = 1;
+      let mondrianImage;
+
+      let orgX = 0;
+      let orgY = 0;
+      let gap = 16;
+
+      function preload() {
+        // Preload any images here
+        mondrianImage = loadImage("images/mondrian.jpeg");
+      }
+
+      function setup() {
+        // Setup p5.js sketch here
+        createCanvas(700, 400).parent("sketch-container");
+      }
+
+      function draw() {
+        // Background
+        image(mondrianImage, 0, 0, width, height);
+        background(0,0,0,200);
+        noStroke();
+
+        // Mouse scale factor
+        let scale = map(mouseX, 0, width, 0.5, 1);
+
+        // Scale gap
+        gap = 16 * scale;
+
+        // Blue rectangle
+        fill(0, 0, 255);
+        let blue1XStart = orgX;
+        let blue1YStart = orgY;
+        let blue1Xend = 252 * scale;
+        let blue1Yend = 74 * scale;
+        rect(blue1XStart, blue1YStart, blue1Xend, blue1Yend);
+
+        // Red rectangle
+        fill(255, 0, 0);
+        let red1XStart = blue1Xend + gap;
+        let red1YStart = orgY;
+        let red1Xend = 314 * scale;
+        let red1Yend = 30 * scale;
+        rect(red1XStart, red1YStart, red1Xend, red1Yend);
+
+        // Yellow rectangle
+        fill(255, 255, 0);
+        let yellow1XStart = red1XStart;
+        let yellow1YStart = red1Yend + gap;
+        let yellow1Xend = 204 * scale;
+        let yellow1Yend = 184 * scale;
+        rect(yellow1XStart, yellow1YStart, yellow1Xend, yellow1Yend);
+
+        // White rectangle
+        fill(255, 255, 255);
+        let white1XStart = blue1Xend + gap + red1Xend + gap;
+        let white1YStart = blue1YStart;
+        let white1Xend = 102 * scale;
+        let white1Yend = 320 * scale;
+        rect(white1XStart, white1YStart, white1Xend, white1Yend);
+
+        // white2 rectangle
+        fill(255, 255, 255);
+        let white2XStart = blue1Xend + gap + yellow1Xend + gap;
+        let white2YStart = yellow1YStart;
+        let white2Xend = 94 * scale;
+        let white2Yend = 184 * scale;
+        rect(white2XStart, white2YStart, white2Xend, white2Yend);
+
+        // white3 rectangle
+        fill(255, 255, 255);
+        let white3XStart = orgX;
+        let white3YStart = blue1Yend + gap;
+        let white3Xend = 187 * scale;
+        let white3Yend = 260 * scale;
+        rect(white3XStart, white3YStart, white3Xend, white3Yend);
+
+        // white4 rectangle
+        fill(255, 255, 255);
+        let white4XStart = white3XStart + white3Xend + gap;
+        let white4YStart = white3YStart;
+        let white4Xend = 48 * scale;
+        let white4Yend = 140 * scale;
+        rect(white4XStart, white4YStart, white4Xend, white4Yend);
+
+        // blue2 rectangle
+        fill(0, 0, 255);
+        let blue2XStart = white4XStart;
+        let blue2YStart = white4YStart + white4Yend + gap;
+        let blue2Xend = 96 * scale;
+        let blue2Yend = 105 * scale;
+        rect(blue2XStart, blue2YStart, blue2Xend, blue2Yend);
+
+        // red2 rectangle
+        fill(255, 0, 0);
+        let red2XStart = blue2XStart + blue2Xend + gap;
+        let red2YStart = blue2YStart;
+        let red2Xend = 268 * scale;
+        let red2Yend = 70 * scale;
+        rect(red2XStart, red2YStart, red2Xend, red2Yend);
+
+        // yellow2 rectangle
+        fill(255, 255, 0);
+        let yellow2XStart = orgX;
+        let yellow2YStart = white3YStart + white3Yend + gap;
+        let yellow2Xend = 298 * scale;
+        let yellow2Yend = 35 * scale;
+        rect(yellow2XStart, yellow2YStart, yellow2Xend, yellow2Yend);
+
+        // white5 rectangle
+        fill(255, 255, 255);
+        let white5XStart = yellow2XStart + yellow2Xend + gap;
+        let white5YStart = red2YStart + red2Yend + gap;
+        let white5Xend = 185 * scale;
+        let white5Yend = 70 * scale;
+        rect(white5XStart, white5YStart, white5Xend, white5Yend);
+
+        // blue3 rectangle
+        fill(0, 0, 255);
+        let blue3XStart = white5XStart + white5Xend + gap;
+        let blue3YStart = white5YStart;
+        let blue3Xend = 185 * scale;
+        let blue3Yend = 70 * scale;
+        rect(blue3XStart, blue3YStart, blue3Xend, blue3Yend);
+
+      }
+    </script>
+  </body>
+</html>

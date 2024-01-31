@@ -55,7 +55,7 @@ function draw() {
       let column = i * w + w * 0.5;
       let row = j * h + h * 0.5
       // draw the ASCII character
-        text(density[charIndex], column, row);
+      text(density[charIndex], column, row);
 
     }
   }

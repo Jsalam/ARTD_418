@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <style>
+      body {
+        width: 60vw;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Boolean values and Conditional Structures</h1>
+
+    <p>This is the code we made in class today (Wed Jan 31, 2024).</p>
+    <div style="display:flex">
+      <iframe
+        src="https://editor.p5js.org/Creative_Coding_UIUC/full/eaIHxzSrp"
+        width="400px"
+        height="450px"
+      ></iframe>
+
+      <pre style="margin-left: 20px"><code>
+//****** PONG *******
+
+let particleX;
+let particleY;
+let rad;
+let step;
+let direction = "down";
+let onCourt;
+
+// paddle
+let xOrg;
+let yOrg;
+let wdth;
+let hgth;
+
+function setup() {
+  createCanvas(400, 400);
+  particleX = width / 2;
+  particleY = height / 2;
+  rad = 10;
+  step = 5;
+
+  // paddle
+  xOrg = 150;
+  yOrg = height - 40;
+  wdth = 100;
+  hght = 20;
+}
+
+function draw() {
+  background(220);
+
+  // draw the ball
+  circle(particleX, particleY, rad);
+
+  // when the ball is going down
+  if (direction == "down") {
+    particleY = particleY + step;
+  }
+
+  // when the ball is going up
+  if (direction == "up") {
+    if (particleY > 0) {
+      particleY = particleY - step;
+    } else {
+      direction = "down";
+    }
+  }
+
+
+  // Paddle
+  rect(xOrg, yOrg, wdth, hght);
+
+  //check if the y position of the ball is beyond the y pos of the paddle
+  if (particleY > yOrg) {
+    
+    // check if the x pof ball is within the paddle boundaries
+    if (particleX > xOrg && particleX < xOrg + wdth) {
+      direction = "up";
+    }
+  }
+}
+
+// move the paddle when the mouse is moved
+function mouseMoved(){
+    // Paddle
+  xOrg = map(mouseX, 0, width, 0, width - wdth);
+}
+
+    </code></pre>
+    </div>
+  </body>
+</html>
